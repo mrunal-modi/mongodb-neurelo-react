@@ -1,0 +1,65 @@
+@import "../../config/global-config-styles.scss";
+
+.crud-page {
+    min-height: calc(100vh - 340px);
+    padding-top: 50px;
+    display: flex;
+    .column{
+        width: 50%;
+        padding: 0 15px;
+    }
+    .title {
+        width: 100%;
+        text-align: center;
+    }
+    .post-form {
+        border: solid 1px #bdbdbd;
+        padding: 20px;
+        border-radius: 4px;
+    }
+    .btn {
+        color: clr(banner-button-text-color);
+        background: clr(banner-button-background-color);
+        border: unset;
+        outline: none;
+        border-radius: 100px;
+        box-shadow: rgba(0, 0, 0,  0.25) 0px 10px 30px;
+        cursor: pointer;
+        display: block;
+        flex: 1 1 0%;
+        font-size: 10px;
+        font-weight: bold;
+        margin-right: 20px;
+        padding: 15px 25px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        top: 0px;
+        user-select: none;
+        white-space: nowrap;
+    }
+
+    // Style for the circle container
+    .task-count {
+        width: 100px; /* Increased size for the circle */
+        height: 100px; /* Increased size for the circle */
+        background-color: clr(banner-button-background-color);
+        color: #fff; /* Set the text color */
+        border-radius: 50%; /* Make it a circle */
+        display: flex;
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+        font-size: 48px; /* Increased font size */
+        margin: 20px auto; /* Add margin to position it properly */
+    }
+
+    @media (max-width: 767px) {
+        flex-wrap: wrap;
+        .column{
+            width: 100%;
+            &:first-child{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
