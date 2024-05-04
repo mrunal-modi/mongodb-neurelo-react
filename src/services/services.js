@@ -18,17 +18,27 @@ export const _create = async (task) => {
     }
 }
 
-export const _read = async () => {
+export const _read = async ({ 
+    select = { task: true, id: true }, 
+    // filter = { task: { contains: "a" } }, 
+    order_by = [{ task: "asc" }], 
+    // take = "1",
+    // skip = 1 
+} = {}) => {
     const params = {
-        select: JSON.stringify({ task: true, id: true }) // Use default params
+        select: JSON.stringify(select),
+        // filter: JSON.stringify(filter),
+        order_by: JSON.stringify(order_by),
+        // take: String(take),
+        // skip: String(skip)
     };
     try {
         const response = await customAxios.get('/', { params });
-        return response.data; // Return only the data part of the response
+        return response.data;
     } catch (error) {
-        throw error; // Rethrow the error for handling in the component
+        throw error;
     }
-}
+};
 
 export const _count = async () => {
     try {

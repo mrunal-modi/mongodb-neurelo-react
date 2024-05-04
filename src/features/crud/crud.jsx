@@ -92,7 +92,6 @@ const Crud = () => {
             console.log(res.data);
             setData(res.data);
             setLoading(false);
-
         }
         catch (err) {
             setLoading(false);
@@ -100,8 +99,8 @@ const Crud = () => {
             setBackendConnected(false);
             console.log(err.response);
         }
-
     };
+
 
     // Update
     const handleChange = async (taskId, newTask) => {
