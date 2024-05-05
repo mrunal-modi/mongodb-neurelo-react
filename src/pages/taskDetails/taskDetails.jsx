@@ -1,8 +1,9 @@
-import "./taskDetails.scss";
+// TaskDetails.jsx
+
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import customAxios from "../../services/customAxios";
-
+import "./taskDetails.scss"; // Import your SCSS file
 
 const TaskDetails = () => {
     const { id } = useParams();
@@ -38,17 +39,19 @@ const TaskDetails = () => {
     }
 
     return (
-        <table>
-            <tbody>
-                {Object.entries(task).map(([key, value]) => (
-                    <tr key={key}>
-                        <th>{key}</th>
-                        <td>{value}</td>
-                    </tr>
-                ))}
-            </tbody>
-        </table>
-    )
+        <div className="table-container"> {/* Add the container class here */}
+            <table>
+                <tbody>
+                    {Object.entries(task).map(([key, value]) => (
+                        <tr key={key}>
+                            <th>{key}</th>
+                            <td>{value}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 }
 
 export default TaskDetails;

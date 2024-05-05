@@ -1,0 +1,27 @@
+// taskDetails.scss
+
+@import "../../config/global-config-styles.scss"; // Import global styles
+
+.table-container {
+    width: 100%;
+    margin-top: 20px;
+    border: solid 1px #bdbdbd;
+    border-radius: 4px;
+    overflow: hidden;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+            padding: 12px;
+            border-bottom: solid 1px #bdbdbd;
+            text-align: left;
+        }
+
+        th {
+            background-color: clr(banner-button-background-color);
+            color: #fff;
+        }
+    }
+}
