@@ -192,7 +192,9 @@ const Crud = () => {
                         onDelete={() => {
                             deleteData(el.id);
                         }}
-                        item={el.task}
+                        // Pass the whole item object, including the id property
+                        item={el}
+                        // item={el.task}
                         key={i}
                     />
                 ))}

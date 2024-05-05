@@ -6,12 +6,13 @@ import {
   DropdownItem,
 } from "reactstrap";
 import "./edit-item.scss";
-// import * as services from "../../services/services";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const EditItemUI = ({ item, onDelete, onChange }) => {
-
+  const navigate = useNavigate();
   const [isEdit, setIsEdit] = useState(false);
-  const [value, setValue] = useState(item);
+  const [value, setValue] = useState(item.task); // Initialize value with task
 
   const handleEnterKey = async (e) => {
     if (e.key === 'Enter') {
@@ -35,7 +36,7 @@ const EditItemUI = ({ item, onDelete, onChange }) => {
       }
       {
         !isEdit &&
-        <h5>{item}</h5>
+        <h5>{item.task}</h5> 
       }
 
       <UncontrolledDropdown className="ml-auto">
@@ -45,6 +46,7 @@ const EditItemUI = ({ item, onDelete, onChange }) => {
         <DropdownMenu end>
           <DropdownItem onClick={() => { setIsEdit(!isEdit) }}>Edit</DropdownItem>
           <DropdownItem onClick={onDelete}>Delete</DropdownItem>
+          <DropdownItem onClick={() => navigate(`/task/${item.id}`)}>Details</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </div>
