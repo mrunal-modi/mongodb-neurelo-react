@@ -184,6 +184,10 @@ const Crud = () => {
             <div className="column">
                 <Title title="Read | Update | Delete" />
 
+                {/* The Crud component renders the EditItemUI component multiple times, passing each item object as a prop. */}
+                {/* The item object contains the id property, which is passed to the EditItemUI component. */}
+                {/* The EditItemUI component can use the id property from the item object for various purposes, such as displaying the task details or handling updates/deletions. */}
+
                 {data?.map((el, i) => (
                     <EditItemUI
                         onChange={(value) => {

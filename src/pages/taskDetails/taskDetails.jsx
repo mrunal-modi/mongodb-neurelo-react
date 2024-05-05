@@ -11,6 +11,7 @@ const TaskDetails = () => {
     const [error, setError] = useState(null);
     const [task, setTask] = useState({});
 
+    // The TaskDetails component uses the id to fetch the task details from the server.
     useEffect(() => {
         const fetchTaskDetails = async () => {
             setIsLoading(true);
