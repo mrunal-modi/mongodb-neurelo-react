@@ -9,6 +9,10 @@ import "./edit-item.scss";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+// The id prop is passed between components mainly through the item object in the EditItemUI component.
+// and through URL parameters in the TaskDetails component. 
+// This allows for the identification of individual tasks within the application.
+
 const EditItemUI = ({ item, onDelete, onChange }) => {
   const navigate = useNavigate();
   const [isEdit, setIsEdit] = useState(false);
